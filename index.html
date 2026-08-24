@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Content Plan</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #151517;
+    color: #f2f0ed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+button {
+    font-family: inherit;
+}
+
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+/* HEADER */
+
+.header {
+    padding: 25px 20px 20px;
+    border-bottom: 1px solid #2d2d31;
+}
+
+.status {
+    color: #ff4b3e;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.status::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #ff4b3e;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.header h1 {
+    font-size: 27px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #98969a;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* CONTENT */
+
+.content {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.section-subtitle {
+    color: #8f8d91;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+/* SEXTING CARDS */
+
+.sexting-card {
+    background: #1e1e21;
+    border: 1px solid #353539;
+    border-radius: 15px;
+    padding: 17px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.sexting-card:active {
+    transform: scale(0.98);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.card-number {
+    color: #ff5145;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.card-arrow {
+    color: #77757a;
+    font-size: 20px;
+}
+
+.sexting-card h3 {
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.sexting-card p {
+    color: #99979b;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+/* PLAN PAGE */
+
+.plan-page {
+    display: none;
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+    color: #aaa8ac;
+    font-size: 15px;
+    padding: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.plan-title {
+    font-size: 27px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+}
+
+.plan-meta {
+    color: #77757a;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.plan-block {
+    background: #1e1e21;
+    border: 1px solid #353539;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 14px;
+}
+
+.plan-block h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.plan-block p {
+    color: #c3c1c4;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.steps {
+    list-style: none;
+}
+
+.steps li {
+    position: relative;
+    padding: 0 0 15px 30px;
+    color: #c3c1c4;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.steps li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #4a484d;
+    border-radius: 50%;
+}
+
+.steps li::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 23px;
+    width: 1px;
+    height: calc(100% - 18px);
+    background: #353539;
+}
+
+.steps li:last-child::after {
+    display: none;
+}
+
+/* REFERENCES */
+
+.references-page {
+    display: none;
+}
+
+.reference {
+    background: #1e1e21;
+    border: 1px solid #353539;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.reference-placeholder {
+    height: 180px;
+    background:
+        linear-gradient(135deg, #27272b, #171719);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #68666b;
+    font-size: 13px;
+}
+
+.reference-info {
+    padding: 15px;
+}
+
+.reference-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.reference-info p {
+    color: #8e8c91;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    height: 76px;
+    background: rgba(29, 29, 32, 0.97);
+    border-top: 1px solid #353539;
+    display: flex;
+    z-index: 100;
+}
+
+.nav-button {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #77757a;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav-icon {
+    display: block;
+    font-size: 23px;
+    margin-bottom: 4px;
+}
+
+.nav-button.active {
+    color: #ff5145;
+}
+
+/* MOBILE */
+
+@media (max-width: 420px) {
+
+    .header {
+        padding: 22px 17px 18px;
+    }
+
+    .content {
+        padding: 17px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .plan-title {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HOME -->
+
+    <div id="homePage">
+
+        <header class="header">
+            <div class="status">НА СВЯЗИ</div>
+
+            <h1>СЕКСТИНГ ПЛАНЫ</h1>
+
+            <p>
+                Открывай нужный план и просто следуй сценарию.
+            </p>
+        </header>
+
+        <main class="content">
+
+            <div class="section-title">
+                Сегодня
+            </div>
+
+            <div class="section-subtitle">
+                Выбери нужный секстинг
+            </div>
+
+
+            <div class="sexting-card" onclick="openPlan('plan1')">
+
+                <div class="card-top">
+                    <span class="card-number">SEXTING 01</span>
+                    <span class="card-arrow">›</span>
+                </div>
+
+                <h3>Tease → Paywall</h3>
+
+                <p>
+                    Постепенный разогрев, флирт и переход к платному контенту.
+                </p>
+
+            </div>
+
+
+            <div class="sexting-card" onclick="openPlan('plan2')">
+
+                <div class="card-top">
+                    <span class="card-number">SEXTING 02</span>
+                    <span class="card-arrow">›</span>
+                </div>
+
+                <h3>Late Night</h3>
+
+                <p>
+                    Ночной сценарий с более личной и расслабленной подачей.
+                </p>
+
+            </div>
+
+
+            <div class="sexting-card" onclick="openPlan('plan3')">
+
+                <div class="card-top">
+                    <span class="card-number">SEXTING 03</span>
+                    <span class="card-arrow">›</span>
+                </div>
+
+                <h3>Photo Tease</h3>
+
+                <p>
+                    Сценарий вокруг фотографии и постепенного усиления интереса.
+                </p>
+
+            </div>
+
+
+            <div class="sexting-card" onclick="openPlan('plan4')">
+
+                <div class="card-top">
+                    <span class="card-number">SEXTING 04</span>
+                    <span class="card-arrow">›</span>
+                </div>
+
+                <h3>Custom Flow</h3>
+
+                <p>
+                    Более гибкий сценарий, который можно адаптировать под фаната.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- PLAN -->
+
+    <div id="planPage" class="plan-page">
+
+        <header class="header">
+
+            <div class="status">SEXTING</div>
+
+            <h1 id="planTitle">Название</h1>
+
+            <p id="planDescription">
+                Описание
+            </p>
+
+        </header>
+
+        <main class="content">
+
+            <button class="back-button" onclick="showHome()">
+                ← Назад к планам
+            </button>
+
+
+            <div class="plan-block">
+
+                <h3>🎯 Цель</h3>
+
+                <p id="planGoal"></p>
+
+            </div>
+
+
+            <div class="plan-block">
+
+                <h3>💬 Сценарий</h3>
+
+                <ol class="steps" id="planSteps"></ol>
+
+            </div>
+
+
+            <div class="plan-block">
+
+                <h3>📌 Важно</h3>
+
+                <p id="planImportant"></p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- REFERENCES -->
+
+    <div id="referencesPage" class="references-page">
+
+        <header class="header">
+
+            <div class="status">РЕФЕРЕНСЫ</div>
+
+            <h1>Референсы</h1>
+
+            <p>
+                Примеры подачи, визуала и атмосферы.
+            </p>
+
+        </header>
+
+
+        <main class="content">
+
+            <div class="reference">
+
+                <div class="reference-placeholder">
+                    PHOTO / VIDEO REFERENCE
+                </div>
+
+                <div class="reference-info">
+
+                    <h3>Light tease</h3>
+
+                    <p>
+                        Мягкий визуал, естественная поза, лёгкий флирт.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="reference">
+
+                <div class="reference-placeholder">
+                    PHOTO / VIDEO REFERENCE
+                </div>
+
+                <div class="reference-info">
+
+                    <h3>Bedroom mood</h3>
+
+                    <p>
+                        Более интимная атмосфера, тёплый свет и спокойная подача.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="reference">
+
+                <div class="reference-placeholder">
+                    PHOTO / VIDEO REFERENCE
+                </div>
+
+                <div class="reference-info">
+
+                    <h3>POV</h3>
+
+                    <p>
+                        Камера от первого лица, ощущение личного общения.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- NAV -->
+
+    <nav class="bottom-nav">
+
+        <button id="homeNav" class="nav-button active" onclick="showHome()">
+
+            <span class="nav-icon">◉</span>
+
+            ПЛАНЫ
+
+        </button>
+
+
+        <button id="referencesNav" class="nav-button" onclick="showReferences()">
+
+            <span class="nav-icon">◇</span>
+
+            РЕФЕРЕНСЫ
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<script>
+
+const plans = {
+
+    plan1: {
+
+        title: "Tease → Paywall",
+
+        description: "Постепенный разогрев и перевод разговора к платному контенту.",
+
+        goal: "Создать интерес и постепенно довести фаната до покупки.",
+
+        important: "Не спеши. Сначала реакция и вовлечение, потом предложение.",
+
+        steps: [
+
+            "Начни разговор с лёгкого флирта и реакции на его настроение.",
+
+            "Поддерживай диалог короткими сообщениями, не выдавай всё сразу.",
+
+            "Добавь небольшой tease и посмотри на его реакцию.",
+
+            "Если интерес есть — предложи продолжение в платном контенте.",
+
+            "После покупки продолжи общение и не обрывай разговор сразу."
+
+        ]
+
+    },
+
+
+    plan2: {
+
+        title: "Late Night",
+
+        description: "Спокойный ночной сценарий с более личной атмосферой.",
+
+        goal: "Создать ощущение приватного разговора один на один.",
+
+        important: "Ночью лучше работает короткая, естественная переписка без длинных сообщений.",
+
+        steps: [
+
+            "Начни с обычного ночного сообщения.",
+
+            "Спроси, почему он ещё не спит.",
+
+            "Переведи разговор на настроение и желания.",
+
+            "Постепенно сделай сообщения более личными.",
+
+            "В нужный момент предложи продолжение в платном контенте."
+
+        ]
+
+    },
+
+
+    plan3: {
+
+        title: "Photo Tease",
+
+        description: "Сценарий построен вокруг фотографии и постепенного усиления интереса.",
+
+        goal: "Использовать фото как повод продолжить разговор.",
+
+        important: "Не отправляй сразу всё. Оставляй пространство для любопытства.",
+
+        steps: [
+
+            "Начни с короткого сообщения перед фотографией.",
+
+            "Отправь первый лёгкий визуальный tease.",
+
+            "Спроси, что именно ему понравилось.",
+
+            "Используй его ответ для продолжения сценария.",
+
+            "Предложи следующий уровень контента."
+
+        ]
+
+    },
+
+
+    plan4: {
+
+        title: "Custom Flow",
+
+        description: "Гибкий сценарий для фаната, который активно вовлекается в разговор.",
+
+        goal: "Подстроиться под конкретного человека и его реакцию.",
+
+        important: "Не следуй сценарию механически. Реакция фаната важнее текста плана.",
+
+        steps: [
+
+            "Определи настроение фаната.",
+
+            "Подстрой тон общения под его сообщения.",
+
+            "Используй вопросы, чтобы понять его интерес.",
+
+            "Постепенно усиливай флирт.",
+
+            "Заверши разговор предложением подходящего контента."
+
+        ]
+
+    }
+
+};
+
+
+function openPlan(id) {
+
+    const plan = plans[id];
+
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("referencesPage").style.display = "none";
+    document.getElementById("planPage").style.display = "block";
+
+    document.getElementById("planTitle").textContent = plan.title;
+
+    document.getElementById("planDescription").textContent = plan.description;
+
+    document.getElementById("planGoal").textContent = plan.goal;
+
+    document.getElementById("planImportant").textContent = plan.important;
+
+    const steps = document.getElementById("planSteps");
+
+    steps.innerHTML = "";
+
+    plan.steps.forEach(step => {
+
+        const li = document.createElement("li");
+
+        li.textContent = step;
+
+        steps.appendChild(li);
+
+    });
+
+    document.getElementById("homeNav").classList.remove("active");
+    document.getElementById("referencesNav").classList.remove("active");
+
+    window.scrollTo(0, 0);
+}
+
+
+function showHome() {
+
+    document.getElementById("homePage").style.display = "block";
+    document.getElementById("planPage").style.display = "none";
+    document.getElementById("referencesPage").style.display = "none";
+
+    document.getElementById("homeNav").classList.add("active");
+    document.getElementById("referencesNav").classList.remove("active");
+
+    window.scrollTo(0, 0);
+}
+
+
+function showReferences() {
+
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("planPage").style.display = "none";
+    document.getElementById("referencesPage").style.display = "block";
+
+    document.getElementById("homeNav").classList.remove("active");
+    document.getElementById("referencesNav").classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+
+</script>
+
+</body>
+</html>
