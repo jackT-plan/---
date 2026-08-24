@@ -4,11 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sexting Plans</title>
+<title>Контент планы</title>
 
 <style>
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -26,13 +31,15 @@ button {
     max-width: 700px;
     margin: 0 auto;
     min-height: 100vh;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header {
-    padding: 22px 20px 16px;
+    padding: 22px 20px 17px;
     border-bottom: 1px solid #292b30;
     position: sticky;
     top: 0;
@@ -43,14 +50,14 @@ button {
 
 .logo {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 800;
     color: #ff513d;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .title {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 800;
     margin-top: 7px;
 }
@@ -61,33 +68,36 @@ button {
     font-size: 14px;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+========================= */
 
 .content {
     padding: 20px;
 }
 
 .section-title {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 800;
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
-/* PLAN CARDS */
+/* =========================
+   PLANS
+========================= */
 
 .plan {
     background: #1b1d21;
     border: 1px solid #303238;
-    border-radius: 16px;
+    border-radius: 17px;
     padding: 18px;
     margin-bottom: 12px;
     cursor: pointer;
     transition: .2s;
 }
 
-.plan:hover {
-    border-color: #555861;
-    transform: translateY(-1px);
+.plan:active {
+    transform: scale(.99);
 }
 
 .plan-top {
@@ -97,20 +107,20 @@ button {
 }
 
 .plan-name {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 750;
 }
 
 .plan-arrow {
     color: #777b84;
-    font-size: 22px;
+    font-size: 26px;
 }
 
 .plan-info {
     margin-top: 8px;
     color: #92959d;
     font-size: 14px;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .badge {
@@ -124,7 +134,9 @@ button {
     font-weight: 700;
 }
 
-/* PLAN PAGE */
+/* =========================
+   PLAN PAGE
+========================= */
 
 .back {
     display: inline-flex;
@@ -134,34 +146,35 @@ button {
     border: none;
     color: #aeb1b8;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     cursor: pointer;
 }
 
 .plan-page-title {
     font-size: 28px;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .plan-meta {
     color: #777b84;
     font-size: 13px;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 .text-block {
     background: #1b1d21;
     border: 1px solid #303238;
-    border-radius: 16px;
+    border-radius: 17px;
     padding: 20px;
-    line-height: 1.65;
+    line-height: 1.6;
     color: #dedfe3;
 }
 
 .text-block h3 {
     margin-top: 0;
     color: #fff;
+    font-size: 18px;
 }
 
 .text-block p {
@@ -176,22 +189,79 @@ button {
     margin: 9px 0;
 }
 
-/* REFERENCES */
+/* =========================
+   CONTENT PLAN BLOCKS
+========================= */
 
-.references {
+.content-section {
+    margin-top: 26px;
+}
+
+.content-section-title {
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.content-count {
+    color: #ff513d;
+    font-weight: 800;
+}
+
+.content-item {
+    background: #151619;
+    border: 1px solid #2d2f34;
+    border-radius: 13px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.content-item-title {
+    font-weight: 750;
+    font-size: 16px;
+}
+
+.content-item-desc {
+    color: #92959d;
+    margin-top: 7px;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.notice {
+    background: #202227;
+    border-left: 3px solid #ff513d;
+    padding: 13px 15px;
+    border-radius: 9px;
+    color: #aeb1b8;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+/* =========================
+   REFERENCES
+========================= */
+
+.reference-categories {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
 
-.reference {
+.reference-category {
     background: #1b1d21;
     border: 1px solid #303238;
-    border-radius: 14px;
+    border-radius: 15px;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.reference-image {
+.reference-category:active {
+    transform: scale(.98);
+}
+
+.reference-preview {
     width: 100%;
     aspect-ratio: 1 / 1;
     background:
@@ -200,25 +270,83 @@ button {
     align-items: center;
     justify-content: center;
     color: #777b84;
-    font-size: 13px;
+    font-size: 12px;
 }
 
-.reference-info {
-    padding: 12px;
+.reference-category-info {
+    padding: 13px;
 }
 
-.reference-title {
-    font-weight: 700;
-    font-size: 14px;
+.reference-category-title {
+    font-weight: 750;
+    font-size: 15px;
 }
 
-.reference-desc {
+.reference-category-desc {
     color: #858891;
     font-size: 12px;
     margin-top: 4px;
 }
 
-/* NAVIGATION */
+/* =========================
+   REFERENCE PAGE
+========================= */
+
+.reference-page-title {
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.reference-page-subtitle {
+    color: #858891;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.reference-card {
+    background: #1b1d21;
+    border: 1px solid #303238;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.reference-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background:
+        linear-gradient(135deg, #292b31, #17181b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #686c75;
+    font-size: 12px;
+}
+
+.reference-card-info {
+    padding: 11px;
+}
+
+.reference-card-title {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.reference-card-desc {
+    color: #777b84;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav {
     position: fixed;
@@ -226,8 +354,8 @@ button {
     left: 50%;
     transform: translateX(-50%);
     width: min(700px, 100%);
-    height: 68px;
-    background: rgba(25,26,29,.97);
+    height: 70px;
+    background: rgba(25,26,29,.98);
     border-top: 1px solid #303238;
     display: flex;
     z-index: 20;
@@ -253,217 +381,438 @@ button {
     margin-bottom: 3px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 480px) {
 
     .title {
-        font-size: 25px;
+        font-size: 26px;
     }
 
     .content {
         padding: 16px;
     }
 
-    .references {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .plan-page-title {
         font-size: 25px;
     }
+
+    .reference-categories {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .reference-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .text-block {
+        padding: 16px;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="app">
 
-    <!-- HEADER -->
+<header class="header">
 
-    <header class="header">
-        <div class="logo">CONTENT MANAGER</div>
-        <div class="title">Sexting Plans</div>
-        <div class="subtitle">Готовые планы и референсы для работы</div>
-    </header>
+    <div class="logo">
+        КОНТЕНТ ПЛАНЫ
+    </div>
+
+    <div class="title">
+        Контент планы
+    </div>
+
+    <div class="subtitle">
+        Готовые планы и референсы для работы
+    </div>
+
+</header>
 
 
-    <!-- MAIN -->
-
-    <main class="content" id="app"></main>
+<main class="content" id="app"></main>
 
 
-    <!-- NAVIGATION -->
+<nav class="nav">
 
-    <nav class="nav">
+    <button id="navPlans"
+            class="active"
+            onclick="showPlans()">
 
-        <button id="navPlans" class="active" onclick="showPlans()">
-            <span class="nav-icon">☰</span>
-            Планы
-        </button>
+        <span class="nav-icon">☰</span>
+        Планы
 
-        <button id="navRefs" onclick="showReferences()">
-            <span class="nav-icon">▣</span>
-            Референсы
-        </button>
+    </button>
 
-    </nav>
+
+    <button id="navRefs"
+            onclick="showReferences()">
+
+        <span class="nav-icon">▣</span>
+        Референсы
+
+    </button>
+
+</nav>
 
 </div>
 
 
 <script>
 
+/* ==========================================
+   КОНТЕНТ-ПЛАНЫ
+========================================== */
+
 const plans = [
 
     {
         id: 1,
-        name: "Sexting #01",
-        description: "Базовый сценарий. Постепенное развитие диалога.",
-        tag: "BASIC",
+
+        name: "Секстинг 1",
+
+        description: "Базовый простой контент-план.",
+
+        tag: "БАЗОВЫЙ",
 
         content: `
-            <h3>SEXTING #01</h3>
 
-            <p>
-                Начинаем спокойно и постепенно переводим разговор
-                в более личное настроение.
-            </p>
+            <h3>Секстинг 1 — Базовый простой</h3>
 
-            <p><strong>1. Начало</strong></p>
 
-            <p>
-                Начать с обычного общения и реакции на его сообщения.
-                Не торопимся сразу переходить к основной части.
-            </p>
+            <div class="content-section">
 
-            <p><strong>2. Разогрев</strong></p>
+                <div class="content-section-title">
+                    Фото <span class="content-count">— 30 шт.</span>
+                </div>
 
-            <ul>
-                <li>Поддерживать диалог.</li>
-                <li>Задавать вопросы.</li>
-                <li>Использовать его ответы для следующего сообщения.</li>
-                <li>Постепенно усиливать флирт.</li>
-            </ul>
 
-            <p><strong>3. Основная часть</strong></p>
+                <div class="content-item">
 
-            <p>
-                После того как собеседник активно включился,
-                переходим к основной части сценария.
-            </p>
+                    <div class="content-item-title">
+                        1. Тизинг — 8 фото
+                    </div>
 
-            <p><strong>4. PPV</strong></p>
+                    <div class="content-item-desc">
+                        Фото без наготы. Различные позы,
+                        ракурсы и варианты съёмки.
+                    </div>
 
-            <p>
-                В нужный момент отправляем платный контент
-                согласно сценарию.
-            </p>
+                </div>
 
-            <p><strong>5. Завершение</strong></p>
 
-            <p>
-                Не обрываем разговор сразу после PPV.
-                Оставляем повод продолжить общение.
-            </p>
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        2. Грудь — 6 фото
+                    </div>
+
+                    <div class="content-item-desc">
+                        Последовательное раскрытие контента,
+                        разные ракурсы и позы.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        3. Минет — 6 фото
+                    </div>
+
+                    <div class="content-item-desc">
+                        Раздел для соответствующих референсов
+                        и материалов съёмки.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        4. Пусси — 6 фото
+                    </div>
+
+                    <div class="content-item-desc">
+                        Разные позы и ракурсы.
+                        Материалы располагаются в соответствующем
+                        разделе референсов.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        5. Попа — 6 фото
+                    </div>
+
+                    <div class="content-item-desc">
+                        Разные ракурсы, позы и варианты съёмки.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="content-section">
+
+                <div class="content-section-title">
+                    Видео <span class="content-count">— 8 шт.</span>
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        1. Тизинг — 1 видео · 1 мин
+                    </div>
+
+                    <div class="content-item-desc">
+                        Начало съёмки, различные позы,
+                        ракурсы и естественные эмоции.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        2. Стриптиз — 1 видео · 1–2 мин
+                    </div>
+
+                    <div class="content-item-desc">
+                        Постепенное изменение образа,
+                        разные ракурсы и движения.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        3. Грудь — 1 видео · 1–1,5 мин
+                    </div>
+
+                    <div class="content-item-desc">
+                        Разные планы, ракурсы и варианты подачи.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        4. Пусси — 1 видео · 1–2 мин
+                    </div>
+
+                    <div class="content-item-desc">
+                        Различные позы, ракурсы и варианты съёмки.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        5. Мастурбация — 2 видео
+                    </div>
+
+                    <div class="content-item-desc">
+                        Два отдельных видео с разной продолжительностью
+                        и постановкой кадра.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        6. Минет — 1 видео · 1–1,5 мин
+                    </div>
+
+                    <div class="content-item-desc">
+                        Разные планы, ракурсы и варианты подачи.
+                    </div>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <div class="content-item-title">
+                        7. Фут-фетиш — 1 видео · 1–2 мин
+                    </div>
+
+                    <div class="content-item-desc">
+                        Крупные планы, различные ракурсы
+                        и эстетичная подача.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="notice">
+
+                Для каждого раздела можно открыть
+                соответствующую категорию в разделе
+                «Референсы» и использовать примеры
+                как ориентир для съёмки.
+
+            </div>
+
         `
     },
+
 
     {
         id: 2,
-        name: "Sexting #02",
-        description: "Более игривый сценарий с акцентом на teasing.",
-        tag: "TEASING",
+
+        name: "Секстинг 2",
+
+        description: "Более игривый контент-план с акцентом на тизинг.",
+
+        tag: "ТИЗИНГ",
 
         content: `
-            <h3>SEXTING #02</h3>
+
+            <h3>Секстинг 2</h3>
 
             <p>
-                Этот сценарий строится вокруг teasing —
-                постепенно создаём интерес и ожидание.
+                Контент-план будет добавлен сюда.
             </p>
 
-            <p><strong>1. Старт</strong></p>
-
-            <p>
-                Начать с лёгкого флирта и коротких сообщений.
-            </p>
-
-            <p><strong>2. Teasing</strong></p>
-
-            <ul>
-                <li>Не раскрывать всё сразу.</li>
-                <li>Оставлять интригу.</li>
-                <li>Реагировать на его настроение.</li>
-            </ul>
-
-            <p><strong>3. Контент</strong></p>
-
-            <p>
-                Постепенно увеличивать ценность контента
-                и переходить к следующему этапу.
-            </p>
-
-            <p><strong>4. PPV</strong></p>
-
-            <p>
-                Отправить соответствующий платный контент
-                в момент максимального интереса.
-            </p>
         `
     },
 
+
     {
         id: 3,
-        name: "Sexting #03",
-        description: "Сценарий для более активного собеседника.",
-        tag: "ACTIVE",
+
+        name: "Секстинг 3",
+
+        description: "Контент-план для более активного сценария.",
+
+        tag: "АКТИВНЫЙ",
 
         content: `
-            <h3>SEXTING #03</h3>
+
+            <h3>Секстинг 3</h3>
 
             <p>
-                Используем, когда фанат уже активно отвечает
-                и сам поддерживает разговор.
+                Контент-план будет добавлен сюда.
             </p>
 
-            <p><strong>Главная задача</strong></p>
-
-            <p>
-                Не перегружать его длинными сообщениями,
-                а быстро реагировать и поддерживать темп.
-            </p>
-
-            <p><strong>Структура</strong></p>
-
-            <ul>
-                <li>Ответ.</li>
-                <li>Реакция на его сообщение.</li>
-                <li>Новый вопрос или teasing.</li>
-                <li>Контент.</li>
-                <li>Следующий шаг сценария.</li>
-            </ul>
         `
     }
 
 ];
 
 
+
+/* ==========================================
+   РЕФЕРЕНСЫ
+========================================== */
+
+const referenceCategories = [
+
+    {
+        id: "teasing",
+        name: "Тизинг",
+        description: "Примеры подачи и поз"
+    },
+
+    {
+        id: "chest",
+        name: "Грудь",
+        description: "Примеры ракурсов"
+    },
+
+    {
+        id: "pussy",
+        name: "Пусси",
+        description: "Примеры поз"
+    },
+
+    {
+        id: "ass",
+        name: "Попа",
+        description: "Примеры ракурсов"
+    },
+
+    {
+        id: "blowjob",
+        name: "Минет",
+        description: "Примеры подачи"
+    },
+
+    {
+        id: "strip",
+        name: "Стриптиз",
+        description: "Примеры видео"
+    },
+
+    {
+        id: "feet",
+        name: "Фут-фетиш",
+        description: "Примеры ракурсов"
+    },
+
+    {
+        id: "poses",
+        name: "Позы",
+        description: "Общие варианты поз"
+    }
+
+];
+
+
+
+/* ==========================================
+   ПЛАНЫ
+========================================== */
+
 function showPlans() {
 
     setActive("navPlans");
 
     let html = `
+
         <div class="section-title">
-            Sexting планы
+            Контент планы
         </div>
+
     `;
+
 
     plans.forEach(plan => {
 
         html += `
-            <div class="plan" onclick="openPlan(${plan.id})">
+
+            <div class="plan"
+                 onclick="openPlan(${plan.id})">
 
                 <div class="plan-top">
 
@@ -477,163 +826,254 @@ function showPlans() {
 
                 </div>
 
+
                 <div class="plan-info">
                     ${plan.description}
                 </div>
+
 
                 <span class="badge">
                     ${plan.tag}
                 </span>
 
             </div>
+
         `;
 
     });
 
+
     document.getElementById("app").innerHTML = html;
+
+    window.scrollTo(0,0);
 }
 
+
+
+/* ==========================================
+   ОТКРЫТЬ ПЛАН
+========================================== */
 
 function openPlan(id) {
 
     const plan = plans.find(p => p.id === id);
 
+
     document.getElementById("app").innerHTML = `
 
-        <button class="back" onclick="showPlans()">
+        <button class="back"
+                onclick="showPlans()">
+
             ← Назад
+
         </button>
+
 
         <div class="plan-page-title">
             ${plan.name}
         </div>
 
+
         <div class="plan-meta">
-            ${plan.tag} · готовый сценарий
+            ${plan.tag}
         </div>
 
+
         <div class="text-block">
+
             ${plan.content}
+
         </div>
 
     `;
+
+
+    window.scrollTo(0,0);
 }
 
+
+
+/* ==========================================
+   РЕФЕРЕНСЫ
+========================================== */
 
 function showReferences() {
 
     setActive("navRefs");
 
-    document.getElementById("app").innerHTML = `
+
+    let html = `
 
         <div class="section-title">
             Референсы
         </div>
 
-        <p style="color:#858891; margin-top:-5px; margin-bottom:20px;">
+
+        <p style="
+            color:#858891;
+            margin-top:-5px;
+            margin-bottom:20px;
+        ">
             Примеры контента и ориентиры для работы.
         </p>
 
-        <div class="references">
 
-            <div class="reference">
+        <div class="reference-categories">
 
-                <div class="reference-image">
-                    REFERENCE 01
+    `;
+
+
+    referenceCategories.forEach(category => {
+
+        html += `
+
+            <div class="reference-category"
+                 onclick="openReference('${category.id}')">
+
+                <div class="reference-preview">
+                    ДОБАВИТЬ ФОТО
                 </div>
 
-                <div class="reference-info">
 
-                    <div class="reference-title">
-                        Teasing
+                <div class="reference-category-info">
+
+                    <div class="reference-category-title">
+                        ${category.name}
                     </div>
 
-                    <div class="reference-desc">
-                        Пример подачи
-                    </div>
 
-                </div>
-
-            </div>
-
-
-            <div class="reference">
-
-                <div class="reference-image">
-                    REFERENCE 02
-                </div>
-
-                <div class="reference-info">
-
-                    <div class="reference-title">
-                        PPV
-                    </div>
-
-                    <div class="reference-desc">
-                        Пример контента
+                    <div class="reference-category-desc">
+                        ${category.description}
                     </div>
 
                 </div>
 
             </div>
 
+        `;
 
-            <div class="reference">
-
-                <div class="reference-image">
-                    REFERENCE 03
-                </div>
-
-                <div class="reference-info">
-
-                    <div class="reference-title">
-                        Pose
-                    </div>
-
-                    <div class="reference-desc">
-                        Пример позы
-                    </div>
-
-                </div>
-
-            </div>
+    });
 
 
-            <div class="reference">
-
-                <div class="reference-image">
-                    REFERENCE 04
-                </div>
-
-                <div class="reference-info">
-
-                    <div class="reference-title">
-                        Outfit
-                    </div>
-
-                    <div class="reference-desc">
-                        Пример образа
-                    </div>
-
-                </div>
-
-            </div>
+    html += `
 
         </div>
 
     `;
+
+
+    document.getElementById("app").innerHTML = html;
+
+    window.scrollTo(0,0);
 }
 
+
+
+/* ==========================================
+   ОТКРЫТЬ КАТЕГОРИЮ РЕФЕРЕНСОВ
+========================================== */
+
+function openReference(id) {
+
+    const category =
+        referenceCategories.find(item => item.id === id);
+
+
+    let html = `
+
+        <button class="back"
+                onclick="showReferences()">
+
+            ← Назад
+
+        </button>
+
+
+        <div class="reference-page-title">
+            ${category.name}
+        </div>
+
+
+        <div class="reference-page-subtitle">
+            ${category.description}
+        </div>
+
+
+        <div class="reference-grid">
+
+    `;
+
+
+    for (let i = 1; i <= 8; i++) {
+
+        html += `
+
+            <div class="reference-card">
+
+                <div class="reference-photo">
+                    ФОТО ${i}
+                </div>
+
+
+                <div class="reference-card-info">
+
+                    <div class="reference-card-title">
+                        Референс ${i}
+                    </div>
+
+
+                    <div class="reference-card-desc">
+                        Добавить пример
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    html += `
+
+        </div>
+
+    `;
+
+
+    document.getElementById("app").innerHTML = html;
+
+    window.scrollTo(0,0);
+}
+
+
+
+/* ==========================================
+   ACTIVE NAV
+========================================== */
 
 function setActive(id) {
 
-    document.querySelectorAll(".nav button")
-        .forEach(button => button.classList.remove("active"));
+    document
+        .querySelectorAll(".nav button")
+        .forEach(button => {
 
-    document.getElementById(id)
+            button.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(id)
         .classList.add("active");
 }
 
+
+
+/* ==========================================
+   START
+========================================== */
 
 showPlans();
 
